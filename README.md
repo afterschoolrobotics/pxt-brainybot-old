@@ -17,9 +17,12 @@ Features include:
 [Purchase link](https://afterschoolrobotics.com/store/p/brainybot)
 
 
-## Basic usage
+## Basic Commands
 
+* Forward
+* Backward
 * Blinking LED
+* Ultrasonic Sensor
 * Light Sensing Robot
 * Line-tracking Robot
 
