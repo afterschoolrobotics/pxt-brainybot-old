@@ -1,7 +1,7 @@
 {
     "name": "Brainybot",
     "version": "2.1.2",
-    "description": "This is the latest version of Maqueen Plus, a programming robot for STEAM education.",
+    "description": "This is the latest version of Brainybot, a programming robot for STEAM education.",
     "license": "MIT",
     "dependencies": {
         "core": "*",
