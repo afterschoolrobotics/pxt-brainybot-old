@@ -4,7 +4,7 @@
  * Custom graphic block
  */
 //% weight=100 color=#0fbc11 icon="\uf067" block="maqueenPlusV2"
-namespace maqueenPlusV2 {
+namespace bb {
 
     //Motor selection enumeration
     export enum MyEnumMotor {
