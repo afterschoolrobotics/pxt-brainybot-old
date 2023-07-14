@@ -16,7 +16,8 @@
         "_locales/cs/bb-strings.json",
         "_locales/cs/bb-jsdoc-strings.json",
         "_locales/fr/bb-strings.json",
-        "bb.ts"
+        "bb.ts",
+        "main.py"
     ],
     "testFiles": [
         "test.ts"
