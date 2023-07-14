@@ -3,11 +3,11 @@
 /**
  * Custom graphic block
  */
-//% weight=100 color=#0fbc11 icon="\uf067" block="brainybot"
+//% weight=100 color=#0fbc11 icon="\uf067" block="Brainybot"
 namespace bb {
 
     //LED light selection enumeration
-    export enum bbled{
+    export enum led{
         //% block="left led light"
         LeftLed,
         //% block="right led light"
@@ -17,7 +17,7 @@ namespace bb {
     };
 
     //LED light switch enumeration selection
-    export enum bbswitch{
+    export enum switch{
         //% block="close"
         Close,
         //% block="open"
@@ -25,7 +25,7 @@ namespace bb {
     };
 
     //Line sensor selection
-    export enum bblinesensor{
+    export enum linesensor{
         //% block="L1"
         SensorL1,
         //% block="M"
@@ -128,17 +128,17 @@ namespace bb {
 
     //% block="control %eled %eSwitch"
     //% weight=97
-    export function controlLED(eled:bbled
- eSwitch:bbswitch:void{
+    export function controlLED(eled:led
+ eSwitch:switch:void{
         switch(eled){
-            case bbled
+            case led
     LeftLed:
                 let leftLedControlBuffer = pins.createBuffer(2);
                 leftLedControlBuffer[0] = LEFT_LED_REGISTER;
                 leftLedControlBuffer[1] = eSwitch;
                 pins.i2cWriteBuffer(I2CADDR, leftLedControlBuffer);
             break;
-            case bbled
+            case led
     RightLed:
                 let rightLedControlBuffer = pins.createBuffer(2);
                 rightLedControlBuffer[0] = RIGHT_LED_REGISTER;
@@ -162,25 +162,25 @@ namespace bb {
 
     //% block="read line sensor %eline state"
     //% weight=96
-    export function readLineSensorState(eline:bblinesensor
+    export function readLineSensorState(eline:linesensor
 :number{
         pins.i2cWriteNumber(I2CADDR, LINE_STATE_REGISTER, NumberFormat.Int8LE);
         let data = pins.i2cReadNumber(I2CADDR, NumberFormat.Int8LE)
         let state;
         switch(eline){
-            case bblinesensor
+            case linesensor
     SensorL1: 
                 state = (data & 0x08) == 0x08 ? 1 : 0; 
             break;
-            case bblinesensor
+            case linesensor
     SensorM: 
                 state = (data & 0x04) == 0x04 ? 1 : 0; 
             break;
-            case bblinesensor
+            case linesensor
     SensorR1: 
                 state = (data & 0x02) == 0x02 ? 1 : 0; 
             break;
-            case bblinesensor
+            case linesensor
     SensorL2: 
                 state = (data & 0x10) == 0X10 ? 1 : 0; 
             break;
@@ -198,29 +198,29 @@ namespace bb {
 
     //% block="read line sensor %eline  ADC data"
     //% weight=95
-    export function readLineSensorData(eline:bblinesensor
+    export function readLineSensorData(eline:linesensor
 :number{
         let data;
         switch(eline){
-            case bblinesensor
+            case linesensor
     SensorR2:
                 pins.i2cWriteNumber(I2CADDR, ADC0_REGISTER, NumberFormat.Int8LE);
                 let adc0Buffer = pins.i2cReadBuffer(I2CADDR, 1);
                 data = adc0Buffer[1] << 8 | adc0Buffer[0]
             break;
-            case bblinesensor
+            case linesensor
     SensorR1:
                 pins.i2cWriteNumber(I2CADDR, ADC1_REGISTER, NumberFormat.Int8LE);
                 let adc1Buffer = pins.i2cReadBuffer(I2CADDR, 2);
                 data = adc1Buffer[1] << 8 | adc1Buffer[0];
             break;
-            case bblinesensor
+            case linesensor
     SensorM:
                 pins.i2cWriteNumber(I2CADDR, ADC2_REGISTER, NumberFormat.Int8LE);
                 let adc2Buffer = pins.i2cReadBuffer(I2CADDR, 2);
                 data = adc2Buffer[1] << 8 | adc2Buffer[0];
             break;
-            case bblinesensor
+            case linesensor
     SensorL1:
                 pins.i2cWriteNumber(I2CADDR, ADC3_REGISTER, NumberFormat.Int8LE);
                 let adc3Buffer = pins.i2cReadBuffer(I2CADDR, 2);
