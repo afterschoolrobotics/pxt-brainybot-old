@@ -22,19 +22,19 @@ Features include:
 * Blinking LED
 
 ```
-maqueenPlusV2.I2CInit()
+bb.I2CInit()
 music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Forever)
-maqueenPlusV2.controlMotor(maqueenPlusV2.MyEnumMotor.AllMotor, maqueenPlusV2.MyEnumDir.Forward, 255)
+bb.controlMotor(bb.MyEnumMotor.AllMotor, bb.MyEnumDir.Forward, 255)
 basic.forever(function () {
-    maqueenPlusV2.setIndexColor(maqueenPlusV2.ledRange(0, 3), maqueenPlusV2.NeoPixelColors.Red)
+    bb.setIndexColor(bb.ledRange(0, 3), bb.NeoPixelColors.Red)
     basic.pause(1000)
-    maqueenPlusV2.setIndexColor(maqueenPlusV2.ledRange(0, 3), maqueenPlusV2.NeoPixelColors.Blue)
+    bb.setIndexColor(bb.ledRange(0, 3), bb.NeoPixelColors.Blue)
     basic.pause(1000)
 })
 ```
 * Light Sensing Robot
 ```
-maqueenPlusV2.I2CInit()
+bb.I2CInit()
 basic.forever(function () {
     basic.showNumber(input.lightLevel())
 })
