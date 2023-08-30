@@ -16,6 +16,8 @@ Features include:
 
 [Purchase link](https://afterschoolrobotics.com/store/p/brainybot)
 
+[Curriculum link](https://drive.google.com/drive/folders/1k4ZVxxIk2RaNHjFOI__wTaOOR8qrL3-G?usp=sharing)
+
 
 ## Basic Commands
 
