@@ -1,4 +1,4 @@
-# Brainybot
+# Brainybot (currently in beta)
 
 ## Introduction
 
